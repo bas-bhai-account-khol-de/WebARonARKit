@@ -386,7 +386,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
 
     // Load the default website.
     NSString *defaultSite =
-        @"http://192.168.1.103:5500/examples/spawn-at-surface-with-anchors.html";
+        @"http://192.168.1.103:5500/examples/record-at-camera.html";
     NSURL *url = [NSURL URLWithString:defaultSite];
     [wkWebView loadRequest:[NSURLRequest requestWithURL:url]];
     [urlTextField setText:url.absoluteString];
@@ -419,7 +419,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
 - (void)initNavigationBacking {
     _navigationBacking = [[NavigationView alloc] init];
     _navigationBacking.backgroundColor = [UIColor whiteColor];
-    [self.view addSubview:_navigationBacking];
+//    [self.view addSubview:_navigationBacking];
 }
 
 - (void)initUrlTextField {
@@ -438,7 +438,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
     urlTextField.textAlignment = NSTextAlignmentCenter;
 
     [urlTextField setDelegate:self];
-    [self.view addSubview:urlTextField];
+//    [self.view addSubview:urlTextField];
 }
 
 - (void)initButtons {
@@ -454,7 +454,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
     [backButton addTarget:self
                    action:@selector(backButtonClicked:)
          forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:backButton];
+//    [self.view addSubview:backButton];
 }
 
 - (void)initRefreshButton {
@@ -465,7 +465,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
     [refreshButton addTarget:self
                       action:@selector(refreshButtonClicked:)
             forControlEvents:UIControlEventTouchDown];
-    [self.view addSubview:refreshButton];
+//    [self.view addSubview:refreshButton];
 }
 
 - (void)dealloc {
@@ -483,7 +483,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
 
 - (void)initProgressView {
     _progressView = [[ProgressView alloc] init];
-    [self.view addSubview:_progressView];
+//    [self.view addSubview:_progressView];
     [self setProgressViewColorSuccessful];
     [self startAndShowProgressView];
 }
@@ -586,6 +586,7 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
                                                URL_BUTTON_HEIGHT_PORTRAIT)];
             int contentOffset = NOTCH_HEIGHT + URL_SAFE_AREA_VERTICAL * 2 +
             URL_TEXTFIELD_HEIGHT_MINIFIED;
+            contentOffset =0;
             CGRect contentRect = CGRectMake(0, contentOffset, self.view.frame.size.width,
                                             self.view.frame.size.height - contentOffset);
             [mtkView setFrame:contentRect];
@@ -647,7 +648,8 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
                                  0, URL_BUTTON_WIDTH_LANDSCAPE,
                                  URL_BUTTON_HEIGHT_LANDSCAPE)];
 
-            int contentOffset = URL_TEXTFIELD_HEIGHT_EXPANDED;
+//            int contentOffset = URL_TEXTFIELD_HEIGHT_EXPANDED;
+            int contentOffset = 0;
             CGRect contentRect = CGRectMake(0, contentOffset, self.view.frame.size.width,
                                             self.view.frame.size.height - contentOffset);
             [mtkView setFrame:contentRect];
@@ -676,7 +678,8 @@ const float CAMERA_FRAME_JPEG_COMPRESSION_FACTOR = 0.5;
                              URL_BUTTON_WIDTH_LANDSCAPE, URL_BUTTON_HEIGHT_LANDSCAPE)];
 
 
-        int contentOffset = URL_TEXTFIELD_HEIGHT_EXPANDED;
+//        int contentOffset = URL_TEXTFIELD_HEIGHT_EXPANDED;
+        int contentOffset = 0;
         CGRect contentRect = CGRectMake(0, contentOffset, self.view.frame.size.width,
                                         self.view.frame.size.height - contentOffset);
 
